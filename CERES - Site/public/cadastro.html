@@ -22,22 +22,12 @@
                     <p class="titulo">Cadastro</p>
                     <p class="subtitulo">Já possui cadastro? <a href="login.html">Entrar</a></p>
 
-                    <div class="form">
-                        <div id="iptNome" class="ipt">
+                    <div class="form" id="parte1">
+                        <div class="ipt">
                             <input id="txt_nomeEmpresa" type="text" placeholder="Nome da empresa" required>
                             <img src="resources/img/user.png" alt="">
                         </div>
                         <div id="nomeMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
-
-                        <br>
-
-                        <div class="ipt">
-                            <input id="txt_emailEmpresa" type="email" placeholder="Email" required>
-                            <img src="resources/img/email.png" alt="">
-                        </div>
-
-                        <div id="emailMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
-
 
                         <br>
 
@@ -47,9 +37,22 @@
                         </div>
                         <div id="cnpjMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
+                        
+
+                        <button onclick="proxPag()">Cadastrar</button>
+                    </div>
+                    <div class="form" id="parte2" style="display: none;">
+
+                        <div class="ipt">
+                            <input id="txt_emailEmpresa" type="email" placeholder="Email" required>
+                            <img src="resources/img/email.png" alt="">
+                        </div>
+
+                        <div id="emailMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
                         <br>
 
-                        <div id="iptCnpj" class="ipt">
+                        <div class="ipt">
                             <input id="txt_senha" type="password" placeholder="Senha" required>
                             <img src="resources/img/cadeado.png" alt="">
                         </div>
@@ -65,8 +68,6 @@
                         </div>
 
                         <div id="senha2Msg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
-
-                        <button onclick="cadastrar()">Cadastrar</button>
                     </div>
                 </div>
             </div>
@@ -78,6 +79,16 @@
 </html>
 
 <script>
+
+    function proxPag() {
+
+        if (((txt_nomeEmpresa.value != undefined) && ((txt_nomeEmpresa.value).length() > 0)) && (txt_cnpj.value)) {
+            
+        }
+        parte1.style.display = 'none';
+        parte2.style.display = 'block';
+    }
+
     function cadastrar() {
         // aguardar();
 
@@ -87,7 +98,6 @@
         var emailVar = txt_emailEmpresa.value;
         var cnpjVar = txt_cnpj.value;
         var senhaVar = txt_senha.value;
-        var empresaVar = txt_empresa.value;
         var confirmacaoSenhaVar = txt_senha2.value.value;
 
         if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
