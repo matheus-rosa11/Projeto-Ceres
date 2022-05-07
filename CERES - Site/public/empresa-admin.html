@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="resources/img/LogoCeres.png">
+    <link rel="stylesheet" href="resources/css/cadLog_style.css">
+    <title>CERES | Entre ou cadastre-se</title>
+    <link rel="stylesheet" href="resources/css/cadLog_style.css">
+</head>
+
+<body>
+
+    <div class="selecione">
+        <h1 class="main_title">Selecione uma opção</h1>
+        <h2>Você é Usuário ou Empresa?</h2>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="left_side">
+
+                <div class="selecionar_tipo">
+                        <h3 class="h3_select"><a href="login.html">Usuário</a></h3>
+                </div>
+
+            </div>
+
+            <div class="right_side">
+
+                <div class="selecionar_tipo">
+                    <h3 class="h3_select_2"><a href="cadastro.html">Empresa</a></h3>
+                </div>
+
+                <div class="main">
+
+                    <!-- <div class="form">
+                        <div id="iptNome" class="ipt">
+                            <input id="txt_nomeEmpresa" type="text" placeholder="Nome da empresa" required>
+                            <img src="resources/img/user.png" alt="">
+                        </div>
+                        <div id="nomeMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_emailEmpresa" type="email" placeholder="Email" required>
+                            <img src="resources/img/email.png" alt="">
+                        </div>
+
+                        <div id="emailMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_cnpj" type="number" placeholder="CNPJ" required>
+                            <img src="" alt="">
+                        </div>
+                        <div id="cnpjMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+                        <br>
+
+                        <div id="iptCnpj" class="ipt">
+                            <input id="txt_senha" type="password" placeholder="Senha" required>
+                            <img src="resources/img/cadeado.png" alt="">
+                        </div>
+
+                        <div id="senhaMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+                        
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_senha2" type="password" placeholder="Repita a senha" required>
+                            <img src="resources/img/cadeado.png" alt="">
+                        </div>
+
+                        <div id="senha2Msg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+                        
+
+                        <button onclick="validar()">Cadastrar</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        var nome_empresa = txt_nomeEmpresa.value;
+        var email_empresa = txt_emailEmpresa.value;
+        var cnpj_empresa = txt_cnpj.value;
+        var senha_empresa = txt_senha.value;
+        var senha_repetida = txt_senha2.value;
+
+        console.log(nome_empresa.length);
+
+        if (nome_empresa.length >= 2) {
+            nomeMsg.innerHTML = "";
+
+            if(email_empresa.indexOf("@") > 0 && email_empresa.endsWith(".com")){
+                emailMsg.innerHTML = "";
+
+                if (cnpj_empresa.length == 14 && cnpj_empresa != '00000000000000') {
+                cnpjMsg.innerHTML = "";
+
+                if(senha_empresa.length > 5){
+                    senhaMsg.innerHTML = "";
+
+                    if(senha_empresa == senha_repetida){
+                        senha2Msg.innerHTML = "";
+
+                        alert("Dados cadastrados com êxito!")
+                    }
+
+                    else{
+                        senha2Msg.innerHTML = "As senhas não se coincidem";
+                    }
+                }
+
+                else{
+                    senhaMsg.innerHTML = "Senha muito fraca";
+                }
+            }
+
+            else {
+                cnpjMsg.innerHTML = "CNPJ inválido";
+            }
+            }
+
+            else{
+                emailMsg.innerHTML = "Email inválido";
+            }
+        }
+
+        else {
+            nomeMsg.innerHTML = "nome inválido";
+        }
+    }
+</script>

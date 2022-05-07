@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/dashboard_style.css">
+    <link rel="icon" href="../resources/img/LogoCeres.png">
+    <title>CERES | Dashboard</title>
+</head>
+
+<body>
+
+    <div class="menuDash">
+        <div class="header">
+            <div class="logo">
+                <img src="../resources/img/LogoCeres.png">
+                <span>Ceres</span>
+            </div>
+            <div class="submenu">
+                <img src="../resources/img/bar-chart.png" alt="">
+                <span>Monitoramento</span>
+            </div>
+        </div>
+        <div class="calendario">
+            <div class="titulo">Olá usuário!</div>
+            <div>Hoje está <b>calor</b></div>
+            <div><img src="../resources/img/temperatura-alta.png" alt=""></div>
+            <div class="titulo">30ºC</div>
+        </div>
+        <div class="suporte">
+            <div><img src="../resources/img/cana cana.png"></div>
+            <div class="tittle">Precisa de suporte?</div>
+            <div><span>Converse com nossa equipe</span></div>
+            <div><button>Clique aqui</button></div>
+        </div>
+    </div>
+
+    <div class="all_dash">
+        <div class="dash_main">
+            <div class="adm">
+                <div class="header_princ">
+                    <div class="headerzinho"><span class="titulo">Administradores</span>
+                        <span class="subTit">Todos funcionários com acesso à Dashboard</span>
+                    </div>
+    
+                    <div class="sair"><a href="../index.html">sair <img src="../resources/img/sair.png" alt=""></a></div>
+                </div>
+
+                <div class="adm_main">
+                    <div class="adm_membro"><img src="../resources/img/user_bg.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Nome do Adm</div>
+                            <div class="tel">11 940483800</div>
+                        </div>
+                    </div>
+                    <div class="adm_membro">
+                        <img src="../resources/img/user_bg.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Nome do Adm</div>
+                            <div class="tel">11 940483800</div>
+                        </div>
+                    </div>
+                    <div class="adm_membro">
+                        <img src="../resources/img/user_bg.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Nome do Adm</div>
+                            <div class="tel">11 940483800</div>
+                        </div>
+                    </div>
+                    <div class="adm_membro">
+                        <img src="../resources/img/user_bg.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Nome do Adm</div>
+                            <div class="tel">11 940483800</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div id="separados" class="main_umitemp">
+                <div class="umi">
+                    <div class="titulo">Umidade</div>
+                    <div class="card">
+                        <div class="titulo">Quantidade sensores</div>
+                        <div class="numSens">45</div>
+                    </div>
+                    <div class="main_umi">
+                        <div>
+                            <canvas id="g_umi"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="temp">
+                    <div class="titulo">Temperatura</div>
+                    <div class="card">
+                        <div class="titulo">Quantidade sensores</div>
+                        <div class="numSens">32</div>
+                    </div>
+                    <div class="main_temp">
+                        <div>
+                            <canvas id="g_temp"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="solicitacao">
+                <div class="titulo">Sensores</div>
+                <div class="subtitulo">Monitoramento de todos os sensores</div>
+
+                <div class="main_solic">
+                    <div class="solic">
+                        <div class="pesquisa">
+                            <input type="search" placeholder="pesquisar id do sensor">
+                            <img src="../resources/img/lupa.png" alt="">
+                        </div>
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 2</div>
+                                <div class="descricao">Temperatura</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="desconectado"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="desconectado"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="desconectado"></div>
+                        </div>
+
+                        <div class="solic_empresa">
+                            <div><img src="../resources/img/sensor.png" alt=""></div>
+                            <div>
+                                <div class="titulo">Sensor 1</div>
+                                <div class="descricao">Umidade</div>
+                            </div>
+                            <div class="online"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="g_solic">
+                        <div>
+                            <canvas id="g_solic"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="anotacao">
+                <div class="headerzinho"><span class="titulo">Anotações</span>
+                    <span class="subTit">Anotações em geral</span>
+                </div>
+
+                <div class="anotacao_main">
+                    <div class="bloco">
+                        <textarea name="" id="text" cols="30"
+                            rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati esse commodi fugit, quisquam sapiente saepe in dignissimos et distinctio quam voluptatum velit hic ratione quod dolores itaque est. Voluptate, tenetur.</textarea>
+                        Cor da fonte: <input id="txt_cor" type="color" value="#ffffff" onchange="mudarFonte_bloco1()">
+                    </div>
+                    <div class="bloco">
+                        <textarea name="" id="text2" cols="30"
+                            rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid assumenda inventore sint, repellat repellendus beatae! Eius unde incidunt laborum ratione dolore qui reprehenderit quia rem nostrum minima? Dolorem, quibusdam laborum!</textarea>
+                        Cor da fonte: <input id="txt_cor2" type="color" value="#ffffff" onchange="mudarFonte_bloco2()">
+                    </div>
+                    <div class="bloco">
+                        <textarea name="" id="text3" cols="30"
+                            rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia incidunt excepturi, quod ipsum obcaecati officia officiis cupiditate, aspernatur, iusto iste odio repudiandae voluptate ratione accusantium reiciendis! Amet iste sint voluptatum?</textarea>
+                        Cor da fonte: <input id="txt_cor3" type="color" value="#ffffff" onchange="mudarFonte_bloco3()">
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../resources/js/graficos.js"></script>
+
+<script>
+    function mudarFonte_bloco1() {
+        cor = txt_cor.value;
+        text.style.color = cor;
+    }
+
+    function mudarFonte_bloco2() {
+        cor = txt_cor2.value;
+        text2.style.color = cor;
+    }
+
+    function mudarFonte_bloco3() {
+        cor = txt_cor3.value;
+        text3.style.color = cor;
+    }
+</script>
+
+
+<script>
+    function mesclar() {
+        separados.style.display = "none";
+        juntos.style.display = "block";
+        mesc.style.display = "none";
+        sep.style.display = "block";
+    }
+
+    function separar() {
+        separados.style.display = "block";
+        juntos.style.display = "none";
+        sep.style.display = "none";
+        mesc.style.display = "block";
+    }
+</script>

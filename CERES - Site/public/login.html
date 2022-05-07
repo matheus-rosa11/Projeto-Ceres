@@ -53,7 +53,7 @@
 
     function entrar() {
 
-        aguardar();
+        // aguardar();
 
         var emailVar = txt_usuario.value;
         var senhaVar = txt_senha.value;
@@ -62,22 +62,22 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
-            finalizarAguardar();
+            // finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
 
         if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
-            finalizarAguardar();
+            // finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -106,7 +106,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -128,7 +128,7 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 </script>
