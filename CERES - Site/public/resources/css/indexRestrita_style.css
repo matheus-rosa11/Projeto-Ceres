@@ -30,8 +30,14 @@ header img{
     width: 30px;
 }
 
-.container{
-    width: 100%;
+.container {
+    display: flex;
+}
+
+.container2{
+    padding: 1%;
+    margin: 2%;
+    width: 45%;
     height: 300px;
     background-color: #F3F2F2;
 
@@ -41,7 +47,28 @@ header img{
     align-items: center;
 }
 
-.container .msg{
+.container3{
+    padding: 1%;
+    margin: 2%;
+    width: 45%;
+    height: 300px;
+    background-color: #F3F2F2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .msg{
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container3 .msg2{
     display: flex;
 
     flex-direction: column;
@@ -53,7 +80,23 @@ header img{
     width: 50px;
 }
 
+.msg2 img{
+    width: 50px;
+}
+
 .msg .dados{
+    font-size: 20px;
+    color: #00825D;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.msg2 .dados2{
     font-size: 20px;
     color: #00825D;
     font-weight: bold;
