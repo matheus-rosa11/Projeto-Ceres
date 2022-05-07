@@ -179,6 +179,17 @@ body{
     color: black;
 }
 
+.right_side .main .form #parte1 button {
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+}
+.right_side .main .form #parte1 button:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+}
+
 
 /* Deixando responsivo */
 

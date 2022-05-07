@@ -35,11 +35,12 @@
                             <input id="txt_cnpj" type="number" placeholder="CNPJ" required>
                             <img src="" alt="">
                         </div>
+
                         <div id="cnpjMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
                         
 
-                        <button onclick="proxPag()">Cadastrar</button>
+                        <button class="btn_cadastro" onclick="proxPag()">Cadastrar</button>
                     </div>
                     <div class="form" id="parte2" style="display: none;">
 
@@ -82,11 +83,25 @@
 
     function proxPag() {
 
-        if (((txt_nomeEmpresa.value != undefined) && ((txt_nomeEmpresa.value).length() > 0)) && (txt_cnpj.value)) {
-            
+        var nomeEmpresa = txt_nomeEmpresa.value;
+        var cnpjEmpresa = txt_cnpj.value;
+
+        if ((nomeEmpresa.length <= 0) || (nomeEmpresa == undefined)) {
+            nomeMsg.innerHTML = 'Digite um nome válido.';
+        } 
+
+        if ((cnpjEmpresa.lengh <= 0) || (cnpjEmpresa == undefined)) {
+            cnpjMsg.innerHTML = 'Digite um CNPJ válido.';
         }
-        parte1.style.display = 'none';
-        parte2.style.display = 'block';
+        
+        if (((nomeEmpresa.length > 0) && (nomeEmpresa != undefined)) && ((cnpjEmpresa.lengh > 0) && (cnpjEmpresa != undefined))) {
+
+            nomeMsg.innerHTML = '';
+            cnpjMsg.innerHTML = '';
+
+            parte1.style.display = 'none';
+            parte2.style.display = 'block';
+        }
     }
 
     function cadastrar() {
