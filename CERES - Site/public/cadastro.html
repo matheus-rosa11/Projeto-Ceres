@@ -38,37 +38,34 @@
 
                         <div id="cnpjMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
-                        
-
-                        <button class="btn_cadastro" onclick="proxPag()">Cadastrar</button>
-                    </div>
-                    <div class="form" id="parte2" style="display: none;">
+                        <br>
 
                         <div class="ipt">
-                            <input id="txt_emailEmpresa" type="email" placeholder="Email" required>
-                            <img src="resources/img/email.png" alt="">
+                            <input id="txt_cep" type="number" placeholder="CEP" required>
+                            <img src="" alt="">
                         </div>
 
-                        <div id="emailMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+                        <div id="msgCep" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
                         <br>
 
                         <div class="ipt">
-                            <input id="txt_senha" type="password" placeholder="Senha" required>
-                            <img src="resources/img/cadeado.png" alt="">
+                            <input id="txt_numero" type="number" placeholder="Número" required>
+                            <img src="" alt="">
                         </div>
 
-                        <div id="senhaMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
-                        
+                        <div id="msgNumero" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
                         <br>
 
                         <div class="ipt">
-                            <input id="txt_senha2" type="password" placeholder="Repita a senha" required>
-                            <img src="resources/img/cadeado.png" alt="">
+                            <input id="txt_complemento" type="text" placeholder="Complemento" required>
+                            <img src="" alt="">
                         </div>
 
-                        <div id="senha2Msg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+
+                        <button class="btn_cadastro" onclick="validar()">Cadastrar</button>
                     </div>
                 </div>
             </div>
@@ -81,28 +78,48 @@
 
 <script>
 
-    function proxPag() {
 
-        var nomeEmpresa = txt_nomeEmpresa.value;
-        var cnpjEmpresa = txt_cnpj.value;
+    function validar() {
+        var nome_empresa = txt_nomeEmpresa.value;
+        var cnpj_empresa = txt_cnpj.value;
+        var cep_empresa = txt_cep.value;
+        var numero_empresa = txt_numero.value;
 
-        if ((nomeEmpresa.length <= 0) || (nomeEmpresa == undefined)) {
-            nomeMsg.innerHTML = 'Digite um nome válido.';
-        } 
+        console.log(nome_empresa.length);
 
-        if ((cnpjEmpresa.lengh <= 0) || (cnpjEmpresa == undefined)) {
-            cnpjMsg.innerHTML = 'Digite um CNPJ válido.';
+        if (nome_empresa.length >= 2) {
+            nomeMsg.innerHTML = "";
+
+            if (cnpj_empresa.length == 14 && cnpj_empresa != '00000000000000') {
+                cnpjMsg.innerHTML = "";
+
+                if (cep_empresa.length == 8 && cep_empresa != '00000000') {
+                    msgCep.innerHTML = "";
+
+                    if (numero_empresa.length < 6 && (numero_empresa + numero_empresa) != 0) {
+                        window.location.replace("login.html");
+                    }
+
+                    else {
+                        msgNumero.innerHTML = "Número inválido";
+                    }
+                }
+
+                else {
+                    msgCep.innerHTML = "CEP inválido";
+                }
+            }
+
+            else {
+                cnpjMsg.innerHTML = "CNPJ inválido";
+            }
         }
-        
-        if (((nomeEmpresa.length > 0) && (nomeEmpresa != undefined)) && ((cnpjEmpresa.lengh > 0) && (cnpjEmpresa != undefined))) {
 
-            nomeMsg.innerHTML = '';
-            cnpjMsg.innerHTML = '';
-
-            parte1.style.display = 'none';
-            parte2.style.display = 'block';
+        else {
+            nomeMsg.innerHTML = "nome inválido";
         }
     }
+
 
     function cadastrar() {
         // aguardar();
@@ -152,7 +169,7 @@
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {
