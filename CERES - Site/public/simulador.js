@@ -10,7 +10,7 @@ function trocarTela() {
 
     // Calculando perda máxima do usuário:
 
-    res_perda_cliente.innerHTML = "R$" + (totalAno * 0.8).toFixed(2);
+    res_perda_cliente.innerHTML = (totalAno * 0.8).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
     // Isso Resultaria no lucro de apenas:
 
@@ -24,7 +24,14 @@ function trocarTela() {
 
     // Resultado saldo:
 
-    res_novo_saldo.innerHTML = "R$" + (totalAno - totalAno * 0.05).toFixed(2);
+    var atual = totalAno - totalAno * 0.05
+
+    var f = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+    console.log(f)
+
+    res_novo_saldo.innerHTML = f;
+    
 }
 
 function calcular(hec, prod) {
