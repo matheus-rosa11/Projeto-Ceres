@@ -28,9 +28,9 @@ function trocarTela() {
 
     var f = atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
-    console.log(f)
+    // console.log(f)
 
-    res_novo_saldo.innerHTML = f;
+    res_novo_saldo.innerHTML = ': ' + f;
     
 }
 
