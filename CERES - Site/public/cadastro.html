@@ -39,30 +39,27 @@
                         <div id="cnpjMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
                         <br>
-
                         <div class="ipt">
-                            <input id="txt_cep" type="number" placeholder="CEP" required>
-                            <img src="" alt="">
+                            <input id="txt_email" type="text" placeholder="Email" required>
+                            <img src="resources/img/email.png" alt="">
                         </div>
-
-                        <div id="msgCep" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+                        <div id="emailMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
                         <br>
 
                         <div class="ipt">
-                            <input id="txt_numero" type="number" placeholder="Número" required>
-                            <img src="" alt="">
+                            <input id="txt_senha" type="text" placeholder="Senha" required>
+                            <img src="resources/img/cadeado.png" alt="">
                         </div>
-
-                        <div id="msgNumero" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+                        <div id="senhaMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
                         <br>
 
                         <div class="ipt">
-                            <input id="txt_complemento" type="text" placeholder="Complemento" required>
-                            <img src="" alt="">
+                            <input id="txt_senhaTwo" type="text" placeholder="Repita a senha" required>
+                            <img src="resources/img/cadeado.png" alt="">
                         </div>
-
+                        <div id="senhaTwoMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
 
 
                         <button class="btn_cadastro" onclick="validar()">Cadastrar</button>
@@ -79,11 +76,12 @@
 <script>
 
 
-    function validar() {
+function validar() {
         var nome_empresa = txt_nomeEmpresa.value;
+        var email_empresa = txt_email.value;
         var cnpj_empresa = txt_cnpj.value;
-        var cep_empresa = txt_cep.value;
-        var numero_empresa = txt_numero.value;
+        var senha_empresa = txt_senha.value;
+        var senha_repetida = txt_senhaTwo.value;
 
         console.log(nome_empresa.length);
 
@@ -93,28 +91,40 @@
             if (cnpj_empresa.length == 14 && cnpj_empresa != '00000000000000') {
                 cnpjMsg.innerHTML = "";
 
-                if (cep_empresa.length == 8 && cep_empresa != '00000000') {
-                    msgCep.innerHTML = "";
+            if(email_empresa.indexOf("@") > 0 && email_empresa.endsWith(".com")){
+                emailMsg.innerHTML = "";
 
-                    if (numero_empresa.length < 6 && (numero_empresa + numero_empresa) != 0) {
+                if(senha_empresa.length > 5){
+                    senhaMsg.innerHTML = "";
+
+                    if(senha_empresa == senha_repetida){
+                        senhaTwoMsg.innerHTML = "";
+
+                        alert("Dados cadastrados com êxito!")
+
                         window.location.replace("login.html");
                     }
 
-                    else {
-                        msgNumero.innerHTML = "Número inválido";
+                    else{
+                     senhaTwoMsg.innerHTML = "As senhas não se coincidem";
                     }
                 }
 
-                else {
-                    msgCep.innerHTML = "CEP inválido";
+                else{
+                    senhaMsg.innerHTML = "Senha muito fraca";
                 }
             }
+
+            else{
+                emailMsg.innerHTML = "Email inválido";
+            }
+        }
+
 
             else {
                 cnpjMsg.innerHTML = "CNPJ inválido";
             }
-        }
-
+            }
         else {
             nomeMsg.innerHTML = "nome inválido";
         }
@@ -130,7 +140,7 @@
         var emailVar = txt_emailEmpresa.value;
         var cnpjVar = txt_cnpj.value;
         var senhaVar = txt_senha.value;
-        var confirmacaoSenhaVar = txt_senha2.value.value;
+        var confirmacaoSenhaVar = txt_senha.value.value;
 
         if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
