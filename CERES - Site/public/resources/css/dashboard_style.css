@@ -262,6 +262,49 @@ body {
     width: 40px;
 }
 
+
+
+
+
+.dash_main .adm_plantacoes {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.adm_plantacoes .adm_plantacao {
+    width: 200px;
+    height: 60px;
+
+    background-color: white;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.adm_plantacao:hover{
+    border: 1px solid #00825D;
+}
+
+.adm_plantacao .titulo{
+    font-size: 15px;
+}
+
+.dash_plantacao .tel{
+    color: rgb(121, 121, 121);
+}
+
+.adm_plantacao img{
+    width: 40px;
+}
+
 .dash_main .anotacao .anotacao_main {
     display: flex;
     justify-content: space-between;
@@ -277,6 +320,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.bloco span{
+    font-size: 13px;
+    color: gray;
 }
 
 .dash_main .anotacao .anotacao_main .bloco textarea {
