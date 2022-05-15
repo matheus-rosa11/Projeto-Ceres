@@ -352,7 +352,8 @@ header .header_main .btn_entrar button:hover {
 }
 
 .resultado{
-    width: 100%;
+    width: 50%;
+    text-align: center;
 }
 
 .one{
@@ -438,6 +439,10 @@ footer .email span{
 
 footer .email img{
     width: 30px;
+}
+
+.descricao{
+    text-align: center;
 }
 
 
