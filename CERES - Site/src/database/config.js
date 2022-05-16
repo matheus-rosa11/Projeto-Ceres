@@ -21,8 +21,8 @@ var sqlServerConfig = {
 var mySqlConfig = {
     host: "localhost",
     user: "root",
-    database: "ceres",
-    password: "p@Ss.W0rd#09/20/78",
+    database: "Ceres",
+    password: "senha",
 };
 
 function executar(instrucao) {
@@ -65,6 +65,7 @@ function executar(instrucao) {
         });
     }
 }
+
 
 module.exports = {
     executar

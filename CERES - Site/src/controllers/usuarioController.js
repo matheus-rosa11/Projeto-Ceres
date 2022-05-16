@@ -61,6 +61,8 @@ function entrar(req, res) {
 }
 
 function cadastrar(req, res) {
+
+    console.log("ta entrando na controller pelo menos");
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;

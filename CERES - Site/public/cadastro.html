@@ -101,6 +101,7 @@ function validar() {
                         senhaTwoMsg.innerHTML = "";
 
                         alert("Dados cadastrados com êxito!")
+                        cadastrar();
 
                         window.location.replace("login.html");
                     }
@@ -132,12 +133,14 @@ function validar() {
 
 
     function cadastrar() {
+
+        console.log("CHEGANDO AQUI");
         // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = txt_nomeEmpresa.value;
-        var emailVar = txt_emailEmpresa.value;
+        var emailVar = txt_email.value;
         var cnpjVar = txt_cnpj.value;
         var senhaVar = txt_senha.value;
         var confirmacaoSenhaVar = txt_senha.value.value;
@@ -162,10 +165,10 @@ function validar() {
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                cnpjServer: cnpjVar,
-                senhaServer: senhaVar
+                nomeServer: nomeVar, // vai pra tabela empresa
+                emailServer: emailVar, // tabela usuario
+                cnpjServer: cnpjVar, // tabela empresa
+                senhaServer: senhaVar, // tabela usuario
             })
         }).then(function (resposta) {
 

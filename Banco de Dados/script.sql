@@ -47,4 +47,3 @@ primary key (idDadosLM35, fkSensor),
 dtCaptura datetime,
 temperatura double
 );
-
