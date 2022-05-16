@@ -5,10 +5,7 @@ use Ceres;
 create table empresa(
 idEmpresa int primary key auto_increment,
 nome varchar(45),
-cnpj varchar(18),
-cep char(8),
-numero int,
-complemento varchar(45)
+cnpj varchar(18)
 );
 
 create table usuario(
