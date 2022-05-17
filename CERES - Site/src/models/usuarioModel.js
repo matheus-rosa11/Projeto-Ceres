@@ -26,13 +26,13 @@ function cadastrar(nome, email, cnpj, senha) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO empresa (nomeEmpresa, cnpj) VALUES ('${nome}', '${cnpj}');
+        INSERT INTO empresa (nome, cnpj) VALUES ('${nome}', '${cnpj}');
     `;
 
     database.executar(instrucao);
 
     var instrucao = `
-    INSERT INTO usuario (email, senha, tipoUsuario, fkEmpresa) VALUES ('${email}','${senha}','${tipo}',(SELECT idEmpresa FROM empresa WHERE cnpj = '${cnpj}' ));
+    INSERT INTO usuario (email, senha, tipo, fkEmpresa) VALUES ('${email}','${senha}','${tipo}',(SELECT idEmpresa FROM empresa WHERE cnpj = '${cnpj}' ));
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
