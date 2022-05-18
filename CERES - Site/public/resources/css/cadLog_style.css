@@ -241,6 +241,14 @@ body{
     transition-duration: all 0.2s;
 }
 
+.loading-div{
+    display: none;
+}
+
+.loading-div img{
+width: 140px;
+}
+
 
 /* Deixando responsivo */
 

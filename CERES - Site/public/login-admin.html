@@ -10,6 +10,8 @@
     <title>CERES | Entre ou cadastre-se</title>
 </head>
 
+<script src="js/funcoes.js"></script>
+
 <body>
 
     <main>
@@ -46,6 +48,10 @@
 
                         <button onclick="entrar()">Entrar</button>
                         <a id="a_esq" href="">Esqueceu a senha?</a>
+
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="resources/img/carregar.gif" id="loading-gif">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,7 +66,7 @@
 
     function entrar() {
 
-        // aguardar();
+        aguardar();
 
         var emailVar = txt_usuario.value;
         var senhaVar = txt_senha.value;
@@ -69,7 +75,7 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
-            // finalizarAguardar();
+            finalizarAguardar();
             return false;
         }
         // else {
@@ -77,7 +83,7 @@
         // }
 
         if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            // finalizarAguardar();
+            finalizarAguardar();
             return false;
         }
         // else {
