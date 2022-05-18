@@ -42,7 +42,7 @@
                             <img src="resources/img/cadeado.png" alt="">
                         </div>
 
-                        <div id="msg" style="color: red; margin-left: 20px;"></div>
+                        <div id="div_erros_login" style="color: red; margin-left: 20px;"></div>
 
                         <button onclick="entrar()">Entrar</button>
                         <a id="a_esq" href="">Esqueceu a senha?</a>
@@ -77,8 +77,6 @@
         // }
 
         if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
             // finalizarAguardar();
             return false;
         }
@@ -89,7 +87,7 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
+        fetch("/usuarios/autenticarAdm", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

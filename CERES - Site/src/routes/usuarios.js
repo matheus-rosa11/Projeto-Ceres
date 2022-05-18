@@ -20,4 +20,9 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+//Autenticas Admin
+router.post("/autenticarAdm", function (req, res) {
+    usuarioController.entrarAdm(req, res);
+});
+
 module.exports = router;
