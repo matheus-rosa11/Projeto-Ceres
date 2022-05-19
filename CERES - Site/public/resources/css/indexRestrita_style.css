@@ -30,16 +30,55 @@ header img{
     width: 30px;
 }
 
+.nav {
+    background-color: #F3F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.nav h1 {
+    color: #00825D;    
+}
+
+.nav h4 {
+    color: #000000;
+}
+
+.nav input {
+    justify-content: center;
+}
+
 .container {
     display: flex;
+    height: 400px;
+    width: 100%;
+    align-items: center;
+    background-color: #F3F2F2;
+
+}
+
+ .nav .barraPesquisa {
+    display: flex;
+    padding: 0.50%;
+    margin: 0%;
+    align-self: center;
+    height: 30px;
+    width: 30%;
+    border-radius: 35px;
+    color: #000000;
+    font-family: 'Poppins',sans-serif;
+    border-color: #F3F2F2; 
+
 }
 
 .container2{
     padding: 1%;
     margin: 2%;
-    width: 45%;
-    height: 300px;
-    background-color: #F3F2F2;
+    width: 25%;
+    height: 220px;
+    background-color: #ffffff;
 
     display: flex;
     flex-direction: column;
@@ -50,14 +89,26 @@ header img{
 .container3{
     padding: 1%;
     margin: 2%;
-    width: 45%;
-    height: 300px;
-    background-color: #F3F2F2;
+    width: 25%;
+    height: 220px;
+    background-color: #ffffff;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.container4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    background-color: #994e4e;
+    width: 20%;
+    height: 350px;
+
 }
 
 .container2 .msg{
@@ -183,4 +234,16 @@ a{
 
 .dashboard img{
     width: 50px;
+}
+
+.but {
+    color: #000000;
+    font-family: 'Poppins',sans-serif;
+    background-color: #fff;
+    text-align: none;
+
+    width: 8%;
+    height: 70%;
+    border-radius: 18px;
+    border-style: none;
 }
