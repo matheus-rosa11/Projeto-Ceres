@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="resources/img/LogoCeres.png">
+    <link rel="stylesheet" href="resources/css/cadLog_style.css">
+    <title>CERES | Entre ou cadastre-se</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="left_side">
+            </div>
+
+            <div class="right_side">
+                <div class="main">
+                    <p class="titulo">Cadastro</p>
+                    <p class="subtitulo">Já possui cadastro? <a href="login.html">Entrar</a></p>
+
+                    <div class="form" id="parte1">
+                        <div class="ipt">
+                            <input id="txt_nomeEmpresa" type="text" placeholder="Nome da empresa" required>
+                            <img src="resources/img/user.png" alt="">
+                        </div>
+                        <div id="nomeMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_cnpj" type="number" placeholder="CNPJ" required>
+                            <img src="" alt="">
+                        </div>
+
+                        <div id="cnpjMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+                        <br>
+                        <div class="ipt">
+                            <input id="txt_email" type="text" placeholder="Email" required>
+                            <img src="resources/img/email.png" alt="">
+                        </div>
+                        <div id="emailMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_senha" type="password" placeholder="Senha" required>
+                            <img src="resources/img/cadeado.png" alt="">
+                        </div>
+                        <div id="senhaMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_senhaTwo" type="password" placeholder="Repita a senha" required>
+                            <img src="resources/img/cadeado.png" alt="">
+                        </div>
+                        <div id="senhaTwoMsg" style="color: red; margin-left: 20px; margin-bottom: -10px;"></div>
+
+
+                        <button class="btn_cadastro" onclick="validar()">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+
+
+function validar() {
+        var nome_empresa = txt_nomeEmpresa.value;
+        var email_empresa = txt_email.value;
+        var cnpj_empresa = txt_cnpj.value;
+        var senha_empresa = txt_senha.value;
+        var senha_repetida = txt_senhaTwo.value;
+
+        console.log(nome_empresa.length);
+
+        if (nome_empresa.length >= 2) {
+            nomeMsg.innerHTML = "";
+
+            if (cnpj_empresa.length == 14 && cnpj_empresa != '00000000000000') {
+                cnpjMsg.innerHTML = "";
+
+            if(email_empresa.indexOf("@") > 0 && email_empresa.endsWith(".com")){
+                emailMsg.innerHTML = "";
+
+                if(senha_empresa.length > 5){
+                    senhaMsg.innerHTML = "";
+
+                    if(senha_empresa == senha_repetida){
+                        senhaTwoMsg.innerHTML = "";
+
+                        alert("Dados cadastrados com êxito!")
+                        cadastrar();
+
+                        window.location.replace("login.html");
+                    }
+
+                    else{
+                     senhaTwoMsg.innerHTML = "As senhas não se coincidem";
+                    }
+                }
+
+                else{
+                    senhaMsg.innerHTML = "Senha muito fraca";
+                }
+            }
+
+            else{
+                emailMsg.innerHTML = "Email inválido";
+            }
+        }
+
+
+            else {
+                cnpjMsg.innerHTML = "CNPJ inválido";
+            }
+            }
+        else {
+            nomeMsg.innerHTML = "nome inválido";
+        }
+    }
+
+
+    function cadastrar() {
+
+        console.log("CHEGANDO AQUI");
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = txt_nomeEmpresa.value;
+        var emailVar = txt_email.value;
+        var cnpjVar = txt_cnpj.value;
+        var senhaVar = txt_senha.value;
+        var confirmacaoSenhaVar = txt_senha.value.value;
+
+        if (nomeVar == "" || emailVar == "" || cnpjVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            // finalizarAguardar();
+            return false;
+        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar, // vai pra tabela empresa
+                emailServer: emailVar, // tabela usuario
+                cnpjServer: cnpjVar, // tabela empresa
+                senhaServer: senhaVar, // tabela usuario
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+</script>

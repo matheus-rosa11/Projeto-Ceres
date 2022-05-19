@@ -10,35 +10,50 @@
     <title>CERES | Entre ou cadastre-se</title>
 </head>
 
+<script src="js/funcoes.js"></script>
+
 <body>
 
     <main>
         <div class="container">
             <div class="left_side">
+                <div class="texto">
+                    <span class="titulo">Você participa de alguma empresa?</span>
+                    <span class="subtitulo">Entre como administrador</span>
+                    <a href="login-admin.html"><div class="fake_button">Entrar</div></a>
+                </div>
             </div>
 
             <div class="right_side">
                 <div class="main">
-                    <p class="titulo">Login</p>
-                    <p class="subtitulo">Ainda não é cadastrado? <a href="empresa-admin.html">Criar conta</a></p>
+                    <div class="titulo">Login
+                        <div class="ep">Empresa</div>
+                    </div>
+                    <p class="subtitulo">Ainda não é cadastrado? <a href="cadastro.html">Criar conta</a></p>
 
                     <div class="form">
                         <div class="ipt">
-                            <input id="txt_usuario" type="text" placeholder="Usuário / Nome Empresa" required>
+                            <input id="txt_usuario" type="text" placeholder="Email do representante" onkeyup="limpar()" required>
                             <img src="resources/img/user.png" alt="">
                         </div>
+
+                        <div id="div_erro_login1" style="color: red; margin-left: 20px;"></div>
 
                         <br>
 
                         <div class="ipt">
-                            <input id="txt_senha" type="password" placeholder="Senha" required>
+                            <input id="txt_senha" type="password" placeholder="Senha" onkeyup="limpar()" required>
                             <img src="resources/img/cadeado.png" alt="">
                         </div>
 
-                        <div id="msg" style="color: red; margin-left: 20px;"></div>
+                        <div id="div_erro_login2" style="color: red; margin-left: 20px;"></div>
 
                         <button onclick="entrar()">Entrar</button>
                         <a id="a_esq" href="">Esqueceu a senha?</a>
+
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="resources/img/carregar.gif" id="loading-gif">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,6 +66,11 @@
 
 <script>
 
+    function limpar() {
+        div_erro_login1.innerHTML = "";
+        div_erro_login2.innerHTML = "";
+    }
+
     function entrar() {
 
         aguardar();
@@ -60,24 +80,27 @@
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
+            div_erro_login1.innerHTML = 'Preencha todos os campos!';
+            div_erro_login2.innerHTML = 'Preencha todos os campos!';
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
             finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
 
         if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
+            msg.innerHTML = 'Email inválido.';
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
             finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -106,7 +129,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/index_restrita.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -114,6 +137,7 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
+                document.getElementById('div_erro_login2').innerHTML = 'Email e/ou senha inválido(s).'
 
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -128,7 +152,7 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 </script>
