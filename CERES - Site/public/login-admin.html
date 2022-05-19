@@ -33,18 +33,20 @@
 
                     <div class="form">
                         <div class="ipt">
-                            <input id="txt_usuario" type="text" placeholder="Email" required>
+                            <input id="txt_usuario" type="text" placeholder="Email" onkeyup="limpar()" required>
                             <img src="resources/img/user.png" alt="">
                         </div>
+
+                        <div id="div_erro_login1" style="color: red; margin-left: 20px;"></div>
 
                         <br>
 
                         <div class="ipt">
-                            <input id="txt_senha" type="password" placeholder="Senha" required>
+                            <input id="txt_senha" type="password" placeholder="Senha" required onkeyup="limpar()">
                             <img src="resources/img/cadeado.png" alt="">
                         </div>
 
-                        <div id="div_erros_login" style="color: red; margin-left: 20px;"></div>
+                        <div id="div_erro_login2" style="color: red; margin-left: 20px;"></div>
 
                         <button onclick="entrar()">Entrar</button>
                         <a id="a_esq" href="">Esqueceu a senha?</a>
@@ -64,6 +66,11 @@
 
 <script>
 
+    function limpar() {
+        div_erro_login1.innerHTML = "";
+        div_erro_login2.innerHTML = "";
+    }
+
     function entrar() {
 
         aguardar();
@@ -75,7 +82,8 @@
         if (emailVar == "" || senhaVar == "") {
             // cardErro.style.display = "block"
             // mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
-            div_erros_login.innerHTML = "Preencha todos os campos";
+            div_erro_login1.innerHTML = "Preencha todos os campos";
+            div_erro_login2.innerHTML = "Preencha todos os campos";
             finalizarAguardar();
             return false;
         }
@@ -84,7 +92,7 @@
         // }
 
         if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            div_erros_login.innerHTML = "Email incorreto";
+            div_erro_login1.innerHTML = "Email inválido";
             finalizarAguardar();
             return false;
         }
@@ -127,9 +135,11 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
+                document.getElementById('div_erro_login2').innerHTML = 'Email e/ou senha inválido(s)';
 
                 resposta.text().then(texto => {
                     console.error(texto);
+                    console.log('estou aqui');
                     finalizarAguardar(texto);
                 });
             }
