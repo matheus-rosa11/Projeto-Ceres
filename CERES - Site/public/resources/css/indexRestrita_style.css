@@ -7,6 +7,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Poppins',sans-serif;
+    background-color: #F8F8F8;
 }
 
 header{
@@ -15,7 +16,7 @@ header{
     /* background-color: red; */
 
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
 
     padding: 0px 40px;
@@ -30,139 +31,99 @@ header img{
     width: 30px;
 }
 
-.nav {
-    background-color: #F3F2F2;
+.logo{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.nav h1 {
-    color: #00825D;    
-}
-
-.nav h4 {
-    color: #000000;
-}
-
-.nav input {
     justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    /* background-color: red; */
+    width: 200px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu b{
+    font-size: 15px;
+}
+
+.tittle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tittle .titulo{
+    color: #00825D;    
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.tittle .subtitulo{
+    font-size: 20px;
+}
+
+.tittle input{
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    border-radius: 89px;
+    border: 1px solid gray;
+    padding: 0px 30px;
+    margin-left: 50px;
+}
+
+input:focus{
+    outline: none;
 }
 
 .container {
     display: flex;
-    height: 400px;
-    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    background-color: #F3F2F2;
-
+    /* background-color: red; */
+    width: 830px;
+    margin-top: 60px;
 }
 
- .nav .barraPesquisa {
-    display: flex;
-    padding: 0.50%;
-    margin: 0%;
-    align-self: center;
-    height: 30px;
-    width: 30%;
-    border-radius: 35px;
-    color: #000000;
-    font-family: 'Poppins',sans-serif;
-    border-color: #F3F2F2; 
-
-}
-
-.container2{
-    padding: 1%;
-    margin: 2%;
-    width: 25%;
-    height: 220px;
-    background-color: #ffffff;
-
+.container .card{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 3px 6px rgba(126, 126, 126, 0.75);
 }
 
-.container3{
-    padding: 1%;
-    margin: 2%;
-    width: 25%;
-    height: 220px;
-    background-color: #ffffff;
-
+.headerCard{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container4 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    background-color: #994e4e;
-    width: 20%;
-    height: 350px;
-
-}
-
-.container2 .msg{
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.container3 .msg2{
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.msg img{
-    width: 50px;
-}
-
-.msg2 img{
-    width: 50px;
-}
-
-.msg .dados{
-    font-size: 20px;
-    color: #00825D;
+.headerCard .dados{
+    font-size: 35px;
+    color: black;
     font-weight: bold;
-
-    display: flex;
-    flex-direction: column;
-
     margin-left: 20px;
-    margin-top: 10px;
 }
 
-.msg2 .dados2{
-    font-size: 20px;
-    color: #00825D;
-    font-weight: bold;
 
-    display: flex;
-    flex-direction: column;
-
-    margin-left: 20px;
-    margin-top: 10px;
+.msg{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .buttons{
-    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 
     margin-top: 40px;
@@ -213,7 +174,7 @@ a{
     border-radius: 20px;
     cursor: pointer;
 
-    margin-left: 40px;
+    margin-left: 130px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -237,13 +198,95 @@ a{
 }
 
 .but {
+    font-size: 15px;
     color: #000000;
+    background: none;
     font-family: 'Poppins',sans-serif;
-    background-color: #fff;
     text-align: none;
-
-    width: 8%;
     height: 70%;
     border-radius: 18px;
     border-style: none;
+    cursor: pointer;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    /* background-color: green; */
+}
+
+.main .left_side{
+    background-color: #F8F8F8;
+    padding: 60px 10px 60px 100px;
+}
+
+.perigo{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.alerta{
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.ok{
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.row{
+    display: flex;
+    margin-top: 20px;
+}
+
+.descricao{
+    width: 700px;
+    /* border: 2px solid red; */
+    display: flex;
+}
+
+.descricao span{
+    margin-left: 10px;
+}
+
+.right_side{
+    height: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.right_side .titulo{
+    font-size: 18;
+    font-weight: bold;
+}
+
+.right_side .subtitulo{
+    font-size: 15px;
+    color: #5B5B5B;
+}
+
+.bloco{
+    width: 96%;
+    height: 70px;
+    /* background-color: yellow; */
+    margin-top: 30px;
+    border: 3px solid #00825D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
 }

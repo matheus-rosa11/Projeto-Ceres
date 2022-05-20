@@ -12,80 +12,79 @@
 
 <body>
     <header>
-        <img src="../resources/img/LogoCeres.png" alt="">
-        <span>Ceres</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <b>Ola, Usuário!</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="but" onclick="sair()"><b>Sair</b></button>
+        <div class="logo">
+            <img src="../resources/img/LogoCeres.png" alt="">
+            <span>Ceres</span>
+        </div>
+        <div class="menu">
+            <b>Ola, Usuário!</b>
+            <button class="but" onclick="sair()"><b>Sair</b></button>
+        </div>
     </header>
 
-    <div class="nav">
-        <h1>Plantação 1</h1>
-        <h4>CEP: 00000-000</h4>
-        <input type="text" class="barraPesquisa" id="inp_restrita" placeholder="Buscar por CEP...">
-    </div>
-
-    <div class="container">
-        <div class="container2">
-            <!-- <div class="msg"><img src="../resources/img/feliz.png" alt="">
-        <div class="dados">
-            <div>Temperatura: 25ºC</div>
-    <div>Umidade: 80%</div>
-        </div></div>
-        <h2>Olá usuario!</h2>
-        <div>No momento sua plantação está controlada!</div> -->
-
-            <!-- <div class="msg"><img src="../resources/img/neutro.png" alt="">
-            <div class="dados" style="color: #D6BC00;">
-                <div>Temperatura: 20ºC</div>
-        <div>Umidade: 76%</div>
-            </div></div>
-            <h2>Olá usuario!</h2>
-            <div>Alerta - No momento sua plantação está em perigo de seca!</div>
-    </div> -->
-
-            <div class="msg"><img src="../resources/img/triste.png" alt="">
-                <div class="dados" style="color: #D20303;">
-                    <div>Temperatura: 18ºC</div>
-                    <!-- <div>Umidade: 60%</div> -->
+    <div class="main">
+        <div class="left_side">
+            <div class="tittle">
+                <div>
+                    <div class="titulo">Plantação 1</div>
+                    <div class="subtitulo">CEP: 00000-000</div>
+                </div>
+                <div class="descricao">
+                    <div class="row"><div class="perigo"></div> <span>Risco de perda</span></div>
+                    <div class="row"><div class="alerta"></div> <span>Risco de perigo</span></div>
+                    <div class="row"><div class="ok"></div> <span>Plantação saudável</span></div>
                 </div>
             </div>
-            <h2>Olá usuario!</h2>
-            <div>Sua plantação está precisando urgentemente de cuidados!</div>
-        </div>
 
-
-
-        <div class="container3">
-
-            <div class="msg2"><img src="../resources/img/triste.png" alt="">
-                <div class="dados2" style="color: #D20303;">
-                    <!-- <div>Temperatura: 18ºC</div> -->
-                    <div>Umidade: 60%</div>
+            <div class="container">
+                <div class="card">
+                    <div class="headerCard">
+                        <img src="../resources/img/triste.png">
+                        <div class="dados">
+                            <div>18ºC</div>
+                        </div>
+                    </div>
+                    <div class="msg">Temperatura descontrolada</div>
+                </div>
+                <div class="card">
+                    <div class="headerCard">
+                        <img src="../resources/img/triste.png">
+                        <div class="dados">
+                            <div>50%</div>
+                        </div>
+                    </div>
+                    <div class="msg">Umidade descontrolada</div>
                 </div>
             </div>
-            <h2>Olá usuario!</h2>
-            <div>Sua plantação está precisando urgentemente de cuidados!</div>
 
         </div>
 
-        <div class="container4">
-            <b>Todas suas plantações</b>
-            selecione qual deseja monitorar
-            <div>
-                
+        <div class="right_side">
+            <div class="titulo">
+                Todas suas plantações
+            </div>
+
+            <div class="subtitulo">
+                Selecione qual deseja monitorar
+            </div>
+
+            <div class="bloco">
+                <div class="titulo">Plantação 1</div>
+                <div class="subtitulo">CEP 08462-300</div>
+            </div>
+            <div class="bloco">
+                <div class="titulo">Plantação 1</div>
+                <div class="subtitulo">CEP 08462-300</div>
+            </div>
+            <div class="bloco">
+                <div class="titulo">Plantação 1</div>
+                <div class="subtitulo">CEP 08462-300</div>
             </div>
 
         </div>
     </div>
 
     <div class="buttons">
-        <div class="simulador">
-            <div class="text">Entre em <b>contato</b>
-                com nossa equipe</div>
-
-            <img src="../resources/img/contato-telefonico.png" alt="">
-        </div>
         <a href="dashboard.html">
             <div class="dashboard">
                 <div class="text"><b>Monitore</b> e <b>controle</b> a sua plantação</div>
@@ -93,6 +92,12 @@
             </div>
         </a>
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
 </body>
 
 </html>
