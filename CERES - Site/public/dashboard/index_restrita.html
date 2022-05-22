@@ -135,7 +135,7 @@
             </div>
 
             <div class="cent">
-                <a href="dashboard.html"><button>Área Dashboard ></button></a>
+                <button onclick="irDashboard()">Área Dashboard ></button>
             </div>
         </div>
         <div class="plantacoes">
@@ -183,5 +183,15 @@ function p1(){
     function sair() {
         sessionStorage.clear();
         document.getElementsByClassName('but').href = '../index.html';
+    }
+
+    function irDashboard(){
+        if(sessionStorage.TIPO_USUARIO == "empresa"){
+            window.location = "dashboardEmpresa.html";
+        }
+
+        else{
+            window.location = "dashboard.html";
+        }
     }
 </script>

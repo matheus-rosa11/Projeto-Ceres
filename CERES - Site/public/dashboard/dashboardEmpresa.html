@@ -411,6 +411,7 @@
         var email_adm = txt_email.value;
         var senha_adm = txt_senha.value;
         var senha_repetida = txt_senhaTwo.value;
+        var fkEmpresa_adm = sessionStorage.ID_USUARIO;
 
         if (nome_adm.length >= 2) {
             nomeMsg.innerHTML = "";
@@ -469,6 +470,7 @@ var nomeVar = txt_nome.value;
 var emailVar = txt_email.value;
 var senhaVar = txt_senha.value;
 var confirmacaoSenhaVar = txt_senha.value.value;
+var fkEmpresaVar = sessionStorage.ID_USUARIO;
 
 if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
     cardErro.style.display = "block"
@@ -493,6 +495,7 @@ fetch("/usuarios/cadastrarAdm", {
         nomeServer: nomeVar, // vai pra tabela empresa
         emailServer: emailVar, // tabela usuario
         senhaServer: senhaVar, // tabela usuario
+        fkEmpresaServer: fkEmpresaVar
     })
 }).then(function (resposta) {
 
@@ -504,7 +507,7 @@ fetch("/usuarios/cadastrarAdm", {
         mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
         setTimeout(() => {
-            window.location.reload = "dashboardEmpresa.html";
+            window.location.assign = "dashboardEmpresa.html";
         }, "2000")
 
         limparFormulario();

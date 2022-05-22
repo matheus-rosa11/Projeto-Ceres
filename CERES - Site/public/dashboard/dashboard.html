@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="calendario">
-            <div class="titulo">Olá usuário!</div>
+            <div class="titulo">Olá, <b id="usuario"></b>!</div>
             <div>Hoje está <b>calor</b></div>
             <div><img src="../resources/img/temperatura-alta.png" alt=""></div>
             <div class="titulo">30ºC</div>
@@ -444,6 +444,8 @@
 <script src="../js/bot.js"></script>
 
 <script>
+
+    usuario.innerHTML = sessionStorage.NOME_USUARIO;
     function abrir() {
 
         // Abertura do áudio
