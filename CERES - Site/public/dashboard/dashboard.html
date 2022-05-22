@@ -12,6 +12,8 @@
 
 <body>
 
+    
+
     <div class="menuDash">
         <div class="header">
             <div class="logo">
@@ -33,20 +35,89 @@
             <div><img src="../resources/img/cana cana.png"></div>
             <div class="tittle">Precisa de suporte?</div>
             <div><span>Converse com nossa equipe</span></div>
-            <div><button onclick="bot()">Clique aqui</button></div>
+            <div><button onclick="abrir()" style="cursor: pointer;">Clique aqui</button></div>
         </div>
     </div>
 
     <div class="all_dash">
+        
         <div class="dash_main">
+
+            <div class="main">
+                <div id="bot" class="botAll">
+                    <div class="bot">
+                        <div class="headerBot">
+                            <div class="imgCeres">
+                                <img src="../resources/img/cerezinha.png" width="100%">
+                            </div>
+                            <div class="descricaoBot">
+                                <div class="nome">Ceres Bot</div>
+                                <div class="desc">Respostas automáticas</div>
+                            </div>
+                            <div class="close">
+                                <img src="../resources/img/close.png" alt="" width="20px">
+                            </div>
+                        </div>
+        
+                        <div id="botMain" class="botMain">
+                            <br>
+                            <div id="msg1" class="blocMsg">
+                                <div class="nomeUser">
+                                    <div class="pop">
+                                    </div>
+                                    <span>Ceres</span>
+                                </div>
+                                <div class="mensagem">
+                                    Olá, como posso ajudar? :)
+                                </div>
+                            </div>
+        
+                            <br>
+        
+                            <div id="msg2" class="blocMsg" style="display: none;">
+                                <div class="nomeUserYou">Você</div>
+                                <div id="descMsg" class="mensagemYou"></div>
+                            </div>
+        
+                            <br>
+        
+                            <div id="msg3" class="blocMsg" style="display: none;">
+                                <div class="nomeUser">
+                                    <div class="pop">
+                                    </div>
+                                    <span>Ceres</span>
+                                </div>
+                                <div id="descMsg2" class="mensagem"></div>
+                            </div>
+        
+                            <br>
+        
+                            <div class="blocMsg" style="display: none;">
+                                <div class="nomeUserYou">Você</div>
+                                <div class="mensagemYou"></div>
+                            </div>
+        
+        
+                        </div>
+        
+                        <div class="selecao">
+                            <div id="select1" class="select">Problema na conta</div>
+                            <div id="select2" class="select">Problemas no produto</div>
+                            <div onclick="selecao3()" id="select3" class="select">Outro</div>
+        
+                            <div onclick="irForm()" id="select4" class="select" style="display: none;">Ok</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="adm">
                 <div class="header_princ">
                     <div class="headerzinho"><span class="titulo">Administradores</span>
                         <span class="subTit">Todos funcionários com acesso à Dashboard</span>
                     </div>
-
-                    <div class="sair"><a href="../index.html">sair <img src="../resources/img/sair.png" alt=""></a>
-                    </div>
+    
+                    <div class="sair"><a href="../index.html">sair <img src="../resources/img/sair.png" alt=""></a></div>
                 </div>
 
                 <div class="adm_main">
@@ -84,42 +155,42 @@
             <br>
 
             <div class="titulo">Plantações</div>
-            <div class="subtitulo">Selecione a plantação na qual deseja monitorar</div>
+                <div class="subtitulo">Selecione a plantação na qual deseja monitorar</div>
 
-            <div class="adm_plantacoes">
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
-                    <div class="nome">
-                        <div class="titulo">Plantação 1</div>
-                        <div class="tel">CEP 08461200</div>
+                <div class="adm_plantacoes">
+                    <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Plantação 1</div>
+                            <div class="tel">CEP 08461200</div>
+                        </div>
                     </div>
+
+                    <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Plantação 2</div>
+                            <div class="tel">CEP 08461200</div>
+                        </div>
+                    </div>
+
+                    <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Plantação 3</div>
+                            <div class="tel">CEP 08461200</div>
+                        </div>
+                    </div>
+
+                    <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                        <div class="nome">
+                            <div class="titulo">Plantação 4</div>
+                            <div class="tel">CEP 08461200</div>
+                        </div>
+                    </div>
+                    
                 </div>
 
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
-                    <div class="nome">
-                        <div class="titulo">Plantação 2</div>
-                        <div class="tel">CEP 08461200</div>
-                    </div>
-                </div>
-
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
-                    <div class="nome">
-                        <div class="titulo">Plantação 3</div>
-                        <div class="tel">CEP 08461200</div>
-                    </div>
-                </div>
-
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
-                    <div class="nome">
-                        <div class="titulo">Plantação 4</div>
-                        <div class="tel">CEP 08461200</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
+                <br>
 
             <div id="separados" class="main_umitemp">
                 <div class="umi">
@@ -357,6 +428,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../resources/js/graficos.js"></script>
+<script src="../js/bot.js"></script>
+
+<script>
+    function abrir() {
+
+        // Abertura do áudio
+        var audio = new Audio("../resources/sounds/som.mp3");
+        audio.oncanplaythrough = function () {
+            audio.play();
+        }
+
+        audio.pause();
+        // 
+
+        bot.style.display = "block";
+
+    }
+</script>
+
 
 <script>
     function mudarFonte_bloco1() {
@@ -390,17 +480,4 @@
         sep.style.display = "none";
         mesc.style.display = "block";
     }
-</script>
-
-<script>
-    function bot() {
-        var audio = new Audio("../resources/sounds/som.mp3");
-
-        audio.oncanplaythrough = function () {
-            audio.play();
-        }
-
-        audio.stop();
-    }
-
 </script>
