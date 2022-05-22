@@ -60,6 +60,7 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.TIPO_USUARIO = json.tipo;
 
                     setTimeout(function () {
                         window.location = "./dashboard/index_restrita.html";
