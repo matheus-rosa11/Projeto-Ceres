@@ -17,8 +17,8 @@
             <span>Ceres</span>
         </div>
         <div class="menu">
-            <b>Ola, Usuário!</b>
-            <button class="but" onclick="sair()"><b>Sair</b></button>
+            <b style="font-weight: 500">Olá, <b id="nomeUsuario"></b>!</b>
+            <button class="but" onclick="sair()"><b><a href="../index.html">Sair</a></b></button>
         </div>
     </header>
 
@@ -135,7 +135,7 @@
             </div>
 
             <div class="cent">
-                <button>Área Dashboard ></button>
+                <a href="dashboard.html"><button>Área Dashboard ></button></a>
             </div>
         </div>
         <div class="plantacoes">
@@ -158,6 +158,8 @@
 
 <script>
 
+document.getElementById('nomeUsuario').innerHTML = sessionStorage.NOME_USUARIO;
+
 function p1(){
         plantacao2.style.display = "none";
         plantacao1.style.display = "flex";
@@ -176,5 +178,10 @@ function p1(){
         selecao2.style.color = "#00825D";
 
         titulo.innerHTML = "Plantação 2"
+    }
+
+    function sair() {
+        sessionStorage.clear();
+        document.getElementsByClassName('but').href = '../index.html';
     }
 </script>

@@ -43,6 +43,7 @@ header img{
     
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menu b{
@@ -60,6 +61,11 @@ header img{
     border-radius: 18px;
     border-style: none;
     cursor: pointer;
+}
+
+.but a {
+    text-decoration: none;
+    color: #000000;
 }
 
 

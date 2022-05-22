@@ -22,6 +22,7 @@ router.post("/cadastrarAdm", function (req, res) {
 
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
+    // usuarioController.nomeEmpresa(req, res);
 });
 
 //Autenticas Admin
