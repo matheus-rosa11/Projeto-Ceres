@@ -55,7 +55,7 @@
                                 <div class="desc">Respostas automáticas</div>
                             </div>
                             <div class="close">
-                                <img src="../resources/img/close.png" alt="" width="20px">
+                                <img src="../resources/img/close.png" alt="" width="20px" onclick="fecharBot()">
                             </div>
                         </div>
         
@@ -92,26 +92,39 @@
         
                             <br>
         
-                            <div class="blocMsg" style="display: none;">
+                            <div id="msg4" class="blocMsg" style="display: none;">
                                 <div class="nomeUserYou">Você</div>
-                                <div class="mensagemYou"></div>
+                                <div id="descMsg4" class="mensagemYou"></div>
+                            </div>
+
+                            <br>
+
+                            <div id="msg5" class="blocMsg" style="display: none;">
+                                <div class="nomeUser">
+                                    <div class="pop">
+                                    </div>
+                                    <span>Ceres</span>
+                                </div>
+                                <div id="descMsg5" class="mensagem"></div>
                             </div>
         
         
                         </div>
         
                         <div class="selecao">
-                            <div id="select1" class="select">Problema na conta</div>
-                            <div id="select2" class="select">Problemas no produto</div>
-                            <div onclick="selecao3()" id="select3" class="select">Outro</div>
-        
+                            <div onclick="conta()" id="select1" class="select">Problema na conta</div>
+                            <div onclick="produto()" id="select2" class="select">Problemas no produto</div>
+                            <div onclick="outro()" id="select3" class="select">Outro</div>
                             <div onclick="irForm()" id="select4" class="select" style="display: none;">Ok</div>
+                            <div onclick="plataforma()" id="select5" class="select" style="display: none;">Plataforma</div>
+                            <div onclick="sensores()" id="select6" class="select" style="display: none;">Sensores</div>
+                            <div onclick="irForm()" id="select7" class="select" style="display: none;">Abrir chamado</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="adm">
+            <!-- <div class="adm">
                 <div class="header_princ">
                     <div class="headerzinho"><span class="titulo">Administradores</span>
                         <span class="subTit">Todos funcionários com acesso à Dashboard</span>
@@ -149,10 +162,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </div> -->
+<!-- 
             <br>
-            <br>
+            <br> -->
 
             <div class="titulo">Plantações</div>
                 <div class="subtitulo">Selecione a plantação na qual deseja monitorar</div>

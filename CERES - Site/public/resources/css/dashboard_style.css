@@ -849,3 +849,7 @@ input:focus{
     align-items: center;
     margin-left: 20px;
 }
+
+.close img{
+    cursor: pointer;
+}
