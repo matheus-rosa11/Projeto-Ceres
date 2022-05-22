@@ -20,7 +20,7 @@ function conta(){
     msg2.style.display = "block";
     descMsg.innerHTML = "Estou tendo problemas com a conta";
     msg3.style.display = "block";
-    descMsg2.innerHTML = "Por favor, baixe um PDF com a solução dos principais problemas <a href='../../resources/img/bar-chart.png' download>clicando aqui</a>, e caso seu problema não tenha sido resolvido clique no botão abaixo 'Abrir chamado'";
+    descMsg2.innerHTML = "Por favor, baixe um PDF com a solução dos principais problemas <a href='../../resources/pdf/Problemas com a conta.pdf' download>clicando aqui</a>, e caso seu problema não tenha sido resolvido clique no botão abaixo 'Abrir chamado'";
     botMain.scrollTo(0,1000);
 
     select1.style.display = "none";

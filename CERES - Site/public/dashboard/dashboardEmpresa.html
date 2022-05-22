@@ -33,12 +33,93 @@
             <div><img src="../resources/img/cana cana.png"></div>
             <div class="tittle">Precisa de suporte?</div>
             <div><span>Converse com nossa equipe</span></div>
-            <div><button>Clique aqui</button></div>
+            <div><button onclick="abrir()">Clique aqui</button></div>
         </div>
     </div>
 
     <div class="all_dash">
         <div class="dash_main">
+
+            <div class="main">
+                <div id="bot" class="botAll">
+                    <div class="bot">
+                        <div class="headerBot">
+                            <div class="imgCeres">
+                                <img src="../resources/img/cerezinha.png" width="100%">
+                            </div>
+                            <div class="descricaoBot">
+                                <div class="nome">Ceres Bot</div>
+                                <div class="desc">Respostas automáticas</div>
+                            </div>
+                            <div class="close">
+                                <img src="../resources/img/close.png" alt="" width="20px" onclick="fecharBot()">
+                            </div>
+                        </div>
+        
+                        <div id="botMain" class="botMain">
+                            <br>
+                            <div id="msg1" class="blocMsg">
+                                <div class="nomeUser">
+                                    <div class="pop">
+                                    </div>
+                                    <span>Ceres</span>
+                                </div>
+                                <div class="mensagem">
+                                    Olá, como posso ajudar? :)
+                                </div>
+                            </div>
+        
+                            <br>
+        
+                            <div id="msg2" class="blocMsg" style="display: none;">
+                                <div class="nomeUserYou">Você</div>
+                                <div id="descMsg" class="mensagemYou"></div>
+                            </div>
+        
+                            <br>
+        
+                            <div id="msg3" class="blocMsg" style="display: none;">
+                                <div class="nomeUser">
+                                    <div class="pop">
+                                    </div>
+                                    <span>Ceres</span>
+                                </div>
+                                <div id="descMsg2" class="mensagem"></div>
+                            </div>
+        
+                            <br>
+        
+                            <div id="msg4" class="blocMsg" style="display: none;">
+                                <div class="nomeUserYou">Você</div>
+                                <div id="descMsg4" class="mensagemYou"></div>
+                            </div>
+
+                            <br>
+
+                            <div id="msg5" class="blocMsg" style="display: none;">
+                                <div class="nomeUser">
+                                    <div class="pop">
+                                    </div>
+                                    <span>Ceres</span>
+                                </div>
+                                <div id="descMsg5" class="mensagem"></div>
+                            </div>
+        
+        
+                        </div>
+        
+                        <div class="selecao">
+                            <div onclick="conta()" id="select1" class="select">Problema na conta</div>
+                            <div onclick="produto()" id="select2" class="select">Problemas no produto</div>
+                            <div onclick="outro()" id="select3" class="select">Outro</div>
+                            <div onclick="irForm()" id="select4" class="select" style="display: none;">Ok</div>
+                            <div onclick="plataforma()" id="select5" class="select" style="display: none;">Plataforma</div>
+                            <div onclick="sensores()" id="select6" class="select" style="display: none;">Sensores</div>
+                            <div onclick="irForm()" id="select7" class="select" style="display: none;">Abrir chamado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div id="cadastroAdm" class="cadastroAdm" style="display: none;">
                 <div class="headerC">
@@ -385,8 +466,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="../resources/js/graficos.js"></script>
+<script src="../js/bot.js"></script>
 
 <script>
+
+function abrir() {
+
+// Abertura do áudio
+var audio = new Audio("../resources/sounds/som.mp3");
+audio.oncanplaythrough = function () {
+    audio.play();
+}
+
+audio.pause();
+// 
+
+bot.style.display = "block";
+
+}
+
     function mudarFonte_bloco1() {
         cor = txt_cor.value;
         text.style.color = cor;
