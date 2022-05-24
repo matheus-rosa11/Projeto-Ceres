@@ -205,6 +205,18 @@ header .header_main .btn_entrar button:hover {
     flex-direction: column;
 }
 
+.page_one .pageOne_main .btn_simular:hover{
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.page_one .pageOne_main .btn_simular{
+    transform: scale(1.0);
+    transition: all .2s ease-in-out;
+    transition-duration: 0.2s;
+}
+
 .pageOne_main .inputs{
     width: 100%;
 
