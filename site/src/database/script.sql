@@ -43,13 +43,3 @@ primary key (idDadosLM35, fkSensor),
 dtCaptura datetime,
 temperatura double
 );
-
-create table anotacao(
-idAnotacao int,
-fkUsuario int, foreign key (fkUsuario) references usuario (idUsuario),
-fkEmpresa int, foreign key (fkEmpresa) references empresa (idEmpresa),
-primary key (idAnotacao, fkUsuario, fkEmpresa),
-descricao varchar(200),
-cor varchar(45)
-);
-

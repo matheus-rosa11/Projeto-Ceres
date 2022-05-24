@@ -12,7 +12,8 @@ create table usuario(
 idUsuario int primary key auto_increment,
 email varchar(45),
 senha varchar(20),
-tipo varchar(20) constraint chkTipo check(tipo = 'empresa' or tipo = 'admin'),
+tipo varchar(20),
+ constraint chkTipo check(tipo = 'empresa' or tipo = 'admin'),
 fkEmpresa int, foreign key (fkEmpresa) references empresa (idEmpresa)
 );
 
