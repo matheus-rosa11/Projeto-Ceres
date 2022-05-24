@@ -10,6 +10,9 @@
     <title>CERES | Dashboard</title>
 </head>
 
+<script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+<script src="../js/funcoes.js"></script>
+
 <body>
 
 
@@ -180,21 +183,21 @@
                     </div>
                 </div>
 
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                <div class="adm_plantacao" onclick="obterDadosGrafico(2)"><img src="../resources/img/plantacao.png" alt="">
                     <div class="nome">
                         <div class="titulo">Plantação 2</div>
                         <div class="tel">CEP 08461200</div>
                     </div>
                 </div>
 
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                <div class="adm_plantacao" onclick="obterDadosGrafico(3)"><img src="../resources/img/plantacao.png" alt="">
                     <div class="nome">
                         <div class="titulo">Plantação 3</div>
                         <div class="tel">CEP 08461200</div>
                     </div>
                 </div>
 
-                <div class="adm_plantacao"><img src="../resources/img/plantacao.png" alt="">
+                <div class="adm_plantacao" onclick="obterDadosGrafico(4)"><img src="../resources/img/plantacao.png" alt="">
                     <div class="nome">
                         <div class="titulo">Plantação 4</div>
                         <div class="tel">CEP 08461200</div>
@@ -209,26 +212,14 @@
 
             <div id="separados" class="main_umitemp">
                 <div class="umi">
-                    <div class="titulo">Umidade</div>
-                    <div class="card">
+                    <div class="titulo">Temperatura e umidade da plantação <b id="tituloPlantacao"></b></div>
+                    <!-- <div class="card">
                         <div class="titulo">Quantidade sensores</div>
                         <div class="numSens">45</div>
-                    </div>
+                    </div> -->
                     <div class="main_umi">
-                        <div>
-                            <canvas id="g_umi"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="temp">
-                    <div class="titulo">Temperatura</div>
-                    <div class="card">
-                        <div class="titulo">Quantidade sensores</div>
-                        <div class="numSens">32</div>
-                    </div>
-                    <div class="main_temp">
-                        <div>
-                            <canvas id="g_temp"></canvas>
+                        <div class="graph">
+                            <canvas id="canvas_grafico"></canvas>
                         </div>
                     </div>
                 </div>
@@ -441,8 +432,6 @@
 
 </html>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../resources/js/graficos.js"></script>
 <script src="../js/bot.js"></script>
 
 <script>
@@ -499,8 +488,6 @@
     }
 </script>
 
-
-
 <script>
 
     let proximaAtualizacao;
@@ -511,9 +498,9 @@
 
     // verificar_autenticacao();
 
-    function alterarTitulo(idAquario) {
-        var tituloAquario = document.getElementById("tituloAquario")
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
+    function alterarTitulo(idPlantacao) {
+        // var tituloAquario = document.getElementById("tituloPlantacao")
+        tituloPlantacao.innerHTML = idPlantacao;
     }
 
     // O gráfico é construído com três funções:
@@ -527,20 +514,20 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function obterDadosGrafico(idAquario) {
-        alterarTitulo(idAquario)
+    function obterDadosGrafico(idPlantacao) {
+        alterarTitulo(idPlantacao)
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/ultimas/${idPlantacao}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, idAquario);
+                    plotarGrafico(resposta, idPlantacao);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -554,7 +541,7 @@
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, idAquario) {
+    function plotarGrafico(resposta, idPlantacao) {
         console.log('iniciando plotagem do gráfico...');
 
         var dados = {
@@ -630,7 +617,7 @@
             }
         });
 
-        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+        setTimeout(() => atualizarGrafico(idPlantacao, dados), 2000);
     }
 
 
@@ -639,9 +626,9 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
-    function atualizarGrafico(idAquario, dados) {
+    function atualizarGrafico(idPlantacao, dados) {
 
-        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/tempo-real/${idPlantacao}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
@@ -651,22 +638,22 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-
+                    
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-
+                    
                     dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                     window.grafico_linha.update();
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idPlantacao, dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idPlantacao, dados), 2000);
             }
         })
             .catch(function (error) {

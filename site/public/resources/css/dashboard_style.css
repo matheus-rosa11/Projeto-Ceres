@@ -460,10 +460,13 @@ input:focus{
     width: 100%;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_umitemp .umi {
-    width: 50%;
+    width: 80%;
+    height: 400px;
 
     /* background-color: blue; */
 
@@ -512,13 +515,14 @@ input:focus{
 
 .main_umitemp .main_umi {
     width: 90%;
-    height: 200px;
+    height: 400px;
 
     background-color: white;
     box-shadow: 0px 3px 6px rgba(126, 126, 126, 0.75);
     border-radius: 30px;
 
     margin-top: 30px;
+    padding: 20px 50px;
 }
 
 .main_umitemp .main_temp {
