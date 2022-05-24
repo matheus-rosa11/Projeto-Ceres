@@ -49,7 +49,7 @@ function plataforma(){
     msg4.style.display = "block";
     descMsg4.innerHTML = "Com o produto (plataforma)";
     msg5.style.display = "block";
-    descMsg5.innerHTML = "Por favor, baixe um PDF com a solução dos principais problemas <a href='../../resources/img/bar-chart.png' download>clicando aqui</a>, e caso seu problema não tenha sido resolvido clique no botão abaixo 'Abrir chamado' ";
+    descMsg5.innerHTML = "Por favor, baixe um PDF com a solução dos principais problemas <a href='../../resources/pdf/Problemas com a plataforma.pdf' download>clicando aqui</a>, e caso seu problema não tenha sido resolvido clique no botão abaixo 'Abrir chamado' ";
     botMain.scrollTo(0,1000);
 
     select5.style.display = "none";
@@ -62,7 +62,7 @@ function sensores(){
     msg4.style.display = "block";
     descMsg4.innerHTML = "Com o produto (sensores)";
     msg5.style.display = "block";
-    descMsg5.innerHTML = "Por favor, baixe um PDF com a solução dos principais problemas <a href='../../resources/img/bar-chart.png' download>clicando aqui</a>, e caso seu problema não tenha sido resolvido clique no botão abaixo 'Abrir chamado' ";
+    descMsg5.innerHTML = "Por favor, baixe um PDF com a solução dos principais problemas <a href='../../resources/pdf/Problemas com os sensores.pdf' download>clicando aqui</a>, e caso seu problema não tenha sido resolvido clique no botão abaixo 'Abrir chamado' ";
     botMain.scrollTo(0,1000);
 
     select5.style.display = "none";
