@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="calendario">
-            <div class="titulo">Olá usuário!</div>
+            <div class="titulo" id="nomeUser"></div>
             <div>Hoje está <b>calor</b></div>
             <div><img src="../resources/img/temperatura-alta.png" alt=""></div>
             <div class="titulo">30ºC</div>
@@ -469,6 +469,8 @@
 <script src="../js/bot.js"></script>
 
 <script>
+
+    nomeUser.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`;
 
 function abrir() {
 
