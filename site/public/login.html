@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="resources/img/LogoCeres.png">
+    <link rel="stylesheet" href="resources/css/cadLog_style.css">
+    <title>CERES | Entre ou cadastre-se</title>
+    <script src="js/validarLogin.js"></script>
+</head>
+
+<script src="js/funcoes.js"></script>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="left_side">
+                <div class="texto">
+                    <span class="titulo">Você participa de alguma empresa?</span>
+                    <span class="subtitulo">Entre como administrador</span>
+                    <a href="login-admin.html"><div class="fake_button">Entrar</div></a>
+                </div>
+            </div>
+
+            <div class="right_side">
+                <div class="main">
+                    <div class="titulo">Login
+                        <div class="ep">Empresa</div>
+                    </div>
+                    <p class="subtitulo">Ainda não é cadastrado? <a href="cadastro.html">Criar conta</a></p>
+
+                    <div class="form">
+                        <div class="ipt">
+                            <input id="txt_usuario" type="text" placeholder="Email do representante" onkeyup="limpar()" required>
+                            <img src="resources/img/user.png" alt="">
+                        </div>
+
+                        <div id="div_erro_login1" style="color: red; margin-left: 20px;"></div>
+
+                        <br>
+
+                        <div class="ipt">
+                            <input id="txt_senha" type="password" placeholder="Senha" onkeyup="limpar()" required>
+                            <img src="resources/img/cadeado.png" alt="">
+                        </div>
+
+                        <div id="div_erro_login2" style="color: red; margin-left: 20px;"></div>
+
+                        <button onclick="entrar()">Entrar</button>
+                        <a id="a_esq" href="">Esqueceu a senha?</a>
+
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="resources/img/carregar.gif" id="loading-gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

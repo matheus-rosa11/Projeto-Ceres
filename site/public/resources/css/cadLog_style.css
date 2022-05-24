@@ -1,0 +1,355 @@
+    /* Importando fontes externas */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/**/
+
+
+
+/* Formatação da página */
+body{
+    margin: 0;
+    font-family:'Poppins',sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+/**/
+
+body{
+    padding: 2% 10%;
+}
+
+.selecione {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.selecione h2 {
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    
+}
+
+.selecionar_tipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+}
+
+.selecionar_tipo a {
+    text-decoration: none;
+    color: rgb(25, 25, 25);
+}
+
+.h3_select {
+    font-size: 3em;
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+}
+
+.h3_select_2 {
+    font-size: 3em;
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+}
+
+.h3_select a:hover {
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+    color: azure;
+    cursor: pointer;
+}
+
+.h3_select_2 a:hover {
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+    color: #23b58b;
+    cursor: pointer;
+}
+
+
+.container{
+    width: 100%;
+    min-height: 600px;
+
+    /* background-color: blue; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+}
+
+.container .left_side{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00825D;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto .titulo{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.texto .subtitulo{
+    color: white;
+    font-size: 18px;
+}
+
+.texto .fake_button{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.texto .fake_button:hover{
+    background-color: white;
+    color: #00825D;
+}
+
+.container .right_side{
+    width: 50%;
+    /* background-color: green; */
+}
+
+.container .right_side .main{
+    /* background-color: red; */
+
+    margin: 60px 70px;
+}
+
+.container .right_side .main .titulo{
+    font-size: 35px;
+
+    color: #00825D;
+    display: flex;
+    align-items: center;
+}
+
+.titulo .ep{
+    color: #72B7A3;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.container .right_side .main .subtitulo{
+    font-size: 20px;
+
+    color: #8F8F8F;
+}
+
+.container .right_side .main .subtitulo a{
+
+    color: #00825D;
+
+    margin-left: 10px;
+}
+
+.container .right_side .main .form{
+    /* background-color: rgb(255, 212, 212); */
+
+    margin-top: 50px;
+}
+
+.container .right_side .main .form .ipt{
+    border-bottom: 1px solid gray;
+
+    padding: 10px 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .right_side .main .form input{
+    width: 90%;
+    font-size: 20px;
+
+    color: #5a5a5a;
+
+    border: none;
+}
+
+.container .right_side .main .form input:focus{
+    outline: none;
+}
+
+.container .right_side .main .form button{
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+
+    border: none;
+    background-color: #00825D;
+    color: white;
+    border-radius: 8px;
+
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.container .right_side .main .form button:hover{
+    background-color: #23b58b;
+    color: #fff;
+}
+
+
+.container .right_side .main .form #a_esq{
+    font-size: 20px;
+
+    color: #8F8F8F;
+
+    margin-left: 50px;
+}
+
+.right_side .main .subtitulo a:hover {
+    color: #23b58b;
+}
+
+.right_side .main .form #a_esq:hover {
+    color: black;
+}
+
+.right_side .main .form #parte1 button {
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+}
+.right_side .main .form #parte1 button:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+    transition-duration: all 0.2s;
+}
+
+.loading-div{
+    display: none;
+}
+
+.loading-div img{
+width: 140px;
+}
+
+
+/* Deixando responsivo */
+
+@media screen and (max-width:1050px){
+    /* body{
+        background-color: red;
+    } */
+
+    .container .left_side{
+        width: 30%;
+    }
+
+    .container .right_side{
+        width: 70%;
+    }
+
+    .container .right_side .main .subtitulo{
+        font-size: 18px;
+    }
+
+    .container .right_side .main .form #a_esq{
+        font-size: 15px;
+
+        margin-left: 10px;
+    }
+
+    .container .right_side .main .form button{
+        width: 120px;
+        height: 60px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    body{
+        /* background-color: red; */
+
+        padding: 2% 5%;
+    }
+
+    .container .left_side{
+        width: 10%;
+    }
+
+    .container .right_side{
+        width: 90%;
+    }
+
+    .container .right_side .main .subtitulo{
+        font-size: 15px;
+    }
+
+    .container .right_side .main .form #a_esq{
+        font-size: 15px;
+
+        margin-left: 10px;
+    }
+
+    .container .right_side .main .form button{
+        width: 120px;
+        height: 60px;
+        font-size: 18px;
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+    body{
+        /* background-color: red; */
+
+        padding: 2% 5%;
+    }
+
+    .container .left_side{
+        width: 2%;
+    }
+
+    .container .right_side{
+        width: 98%;
+    }
+
+    .container .right_side .main .subtitulo{
+        font-size: 15px;
+    }
+
+    .container .right_side .main .form #a_esq{
+        font-size: 15px;
+
+        margin-left: 10px;
+    }
+
+    .container .right_side .main .form button{
+        width: 120px;
+        height: 60px;
+        font-size: 18px;
+    }
+}

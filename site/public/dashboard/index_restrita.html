@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/indexRestrita_style.css">
+    <link rel="icon" href="../resources/img/LogoCeres.png">
+    <title>CERES | Página inicial </title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../resources/img/LogoCeres.png" alt="">
+            <span>Ceres</span>
+        </div>
+        <div class="menu">
+            <b style="font-weight: 500">Olá, <b id="nomeUsuario"></b>!</b>
+            <button class="but" onclick="sair()"><b><a href="../index.html">Sair</a></b></button>
+        </div>
+    </header>
+
+
+    <div class="main">
+        <div class="descricoes">
+            <div class="titulo">Temperatura alertas</div>
+            <div class="subtitulo">Base de cores dos alertas</div>
+
+            <div class="conjunto">
+                <div class="bloco">
+                    <div class="cf"></div>
+                    <span>Crítico frio</span>
+                </div>
+                <div class="bloco">
+                    <div class="af"></div>
+                    <span>Alerta frio</span>
+                </div>
+                <div class="bloco">
+                    <div class="ti"></div>
+                    <span>Temperatura ideal</span>
+                </div>
+                <div class="bloco">
+                    <div class="aq"></div>
+                    <span>Alerta quente</span>
+                </div>
+                <div class="bloco">
+                    <div class="cq"></div>
+                    <span>Crítico quente</span>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="titulo">Umidade alertas</div>
+            <div class="subtitulo">Base de cores dos alertas</div>
+
+            <div class="conjunto">
+                <div class="bloco">
+                    <div class="cs"></div>
+                    <span>Crítico seco</span>
+                </div>
+                <div class="bloco">
+                    <div class="as"></div>
+                    <span>Alerta seco</span>
+                </div>
+                <div class="bloco">
+                    <div class="ui"></div>
+                    <span>Umidade ideal</span>
+                </div>
+                <div class="bloco">
+                    <div class="au"></div>
+                    <span>Alerta úmido</span>
+                </div>
+                <div class="bloco">
+                    <div class="c-u"></div>
+                    <span>Crítico úmido</span>
+                </div>
+            </div>
+        </div>
+        <div class="alerta">
+            <div id="titulo" class="titulo">Plantação 1</div>
+            <div id="plantacao1" class="alertaMain">
+                <div class="card">
+                    <div class="grau">
+                        <div class="ti"></div>
+                        <span>28°C</span>
+                    </div>
+
+                    <img src="../resources/img/Feliz1.png" alt="">
+                    <span class="desc">Temperatura ideal</span>
+
+                    <span class="horas">Último registro: 12:00</span>
+
+                </div>
+            <div class="card">
+                <div class="grau">
+                    <div class="ui"></div>
+                    <span>80%</span>
+                </div>
+
+                <img src="../resources/img/Feliz2.png" alt="">
+                    <span class="desc">Umidade ideal</span>
+
+                    <span class="horas">Último registro: 12:00</span>
+            </div>
+            </div>
+
+            <div id="plantacao2" class="alertaMain" style="display: none;">
+                <div class="card">
+                    <div class="grau">
+                        <div class="cq"></div>
+                        <span>17°C</span>
+                    </div>
+
+                    <img src="../resources/img/triste2.png" alt="">
+                    <span class="desc">Crítico quente</span>
+
+                    <span class="horas">Último registro: 12:00</span>
+
+                </div>
+            <div class="card">
+                <div class="grau">
+                    <div class="cs"></div>
+                    <span>70%</span>
+                </div>
+
+                <img src="../resources/img/triste.png" alt="">
+                    <span class="desc">Crítico <br> seco</span>
+
+                    <span class="horas">Último registro: 12:00</span>
+            </div>
+            </div>
+
+            <div class="cent">
+                <button onclick="irDashboard()">Área Dashboard ></button>
+            </div>
+        </div>
+        <div class="plantacoes">
+            <div class="titulo">Plantações</div>
+            <div class="subtitulo">Selecione a plantação na qual deseja monitorar</div>
+
+            <div class="conjunto">
+                <div id="selecao1" onclick="p1()" class="plantacao ativo">Plantação 1</div>
+                <div id="selecao2" onclick="p2()" class="plantacao">Plantação 2</div>
+                <div class="plantacao">Plantação 3</div>
+                <div class="plantacao">Plantação 4</div>
+                <div class="plantacao">Plantação 5</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+document.getElementById('nomeUsuario').innerHTML = sessionStorage.NOME_USUARIO;
+
+function p1(){
+        plantacao2.style.display = "none";
+        plantacao1.style.display = "flex";
+
+        selecao2.style.color = "#CCCCCC";
+        selecao1.style.color = "#00825D";
+
+        titulo.innerHTML = "Plantação 1"
+    }
+
+    function p2(){
+        plantacao1.style.display = "none";
+        plantacao2.style.display = "flex";
+
+        selecao1.style.color = "#CCCCCC";
+        selecao2.style.color = "#00825D";
+
+        titulo.innerHTML = "Plantação 2"
+    }
+
+    function sair() {
+        sessionStorage.clear();
+        document.getElementsByClassName('but').href = '../index.html';
+    }
+
+    function irDashboard(){
+        if(sessionStorage.TIPO_USUARIO == "empresa"){
+            window.location = "dashboardEmpresa.html";
+        }
+
+        else{
+            window.location = "dashboard.html";
+        }
+    }
+</script>
