@@ -212,6 +212,7 @@ body{
     border-radius: 8px;
 
     margin-top: 40px;
+    cursor: pointer;
 }
 
 .container .right_side .main .form button:hover{
