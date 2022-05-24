@@ -31,6 +31,14 @@ header .img_menu{
     cursor: pointer;
 }
 
+header .titulo{
+    display: flex;
+}
+
+header .titulo img{
+    margin-top: 5px;
+}
+
 header .header_main{
     width: 100%;
     height: 100%;
