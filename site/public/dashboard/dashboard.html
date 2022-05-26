@@ -438,7 +438,7 @@
 
     usuario.innerHTML = sessionStorage.NOME_USUARIO;
     function abrir() {
-
+        
         // Abertura do áudio
         var audio = new Audio("../resources/sounds/som.mp3");
         audio.oncanplaythrough = function () {
@@ -638,6 +638,9 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro[0].momento_grafico2); // incluir um novo momento
                     
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade

@@ -13,8 +13,9 @@ function buscarUltimasMedidas(idPlantacao, limite_linhas) {
                     order by sensor.fkPlantacao desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select umidade, dtCaptura from dadosdht11 join sensor on fkSensor = idSensor
-        where sensor.fkPlantacao = ${idPlantacao} order by sensor.fkPlantacao desc limit ${limite_linhas};`;
+        instrucaoSql = `select umidade, temperatura, dadosdht11.dtCaptura, dadoslm35.dtCaptura from dadosdht11 join sensor on dadosdht11.fkSensor = sensor.idSensor
+        join dadoslm35 on dadoslm35.fkSensor = sensor.idSensor
+        where sensor.fkPlantacao = ${idPlantacao} order by umidade desc limit ${limite_linhas};`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -41,11 +42,10 @@ function buscarMedidasEmTempoReal(idPlantacao) {
         instrucaoSql = `select 
         umidade, temperatura,
                         DATE_FORMAT(dadosdht11.dtCaptura,'%H:%i:%s') as momento_grafico,
-                        DATE_FORMAT(dadoslm35.dtCaptura,'%H:%i:%s'),
+                        DATE_FORMAT(dadoslm35.dtCaptura,'%H:%i:%s') as momento_grafico2,
                         sensor.fkPlantacao
                         from dadosdht11 join sensor on dadosdht11.fkSensor = sensor.idSensor 
-                        join dadoslm35 on dadoslm35.fkSensor = sensor.idSensor where sensor.fkPlantacao = ${idPlantacao} 
-                    order by sensor.fkPlantacao desc limit 1`;
+                        join dadoslm35 on dadoslm35.fkSensor = sensor.idSensor where sensor.fkPlantacao = ${idPlantacao} order by sensor.fkPlantacao desc`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
